@@ -1,0 +1,28 @@
+@import "../../styles/General.scss";
+
+.modal__container {
+  @extend %modalWindow;
+
+  h1 {
+    @extend %modalHeader;
+    margin-top: 32px;
+    text-align: center;
+  }
+
+  &_icon {
+    @include modalIcon;
+  }
+
+  img {
+    @extend %modalImage;
+  }
+
+  &_button {
+    display: flex;
+    margin: 0 auto;
+    margin-top: 40px;
+    justify-content: center;
+
+    @include button($width: 109px);
+  }
+}

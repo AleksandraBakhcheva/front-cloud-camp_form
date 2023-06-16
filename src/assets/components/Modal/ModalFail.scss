@@ -1,0 +1,50 @@
+@import "../../styles/General.scss";
+
+.modal__container {
+  @extend %modalWindow;
+
+  &_header {
+    display: flex;
+    width: 396px;
+    margin: 0 auto;
+    margin-top: 25px;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    h1 {
+      @extend %modalHeader;
+    }
+
+    div {
+      position: relative;
+      width: 28px;
+      height: 28px;
+      border-radius: 100px;
+      background-color: $modal-bg-cross;
+    }
+
+    img {
+      position: absolute;
+      left: 28%;
+      top: 28%;
+    }
+  }
+
+  &_icon {
+    @include modalIcon($background-color: $modal-fail-color);
+
+    img {
+      @extend %modalImage;
+    }
+  }
+
+  &_button {
+    display: flex;
+    margin: 0 0 0 73%;
+    margin-top: 40px;
+    justify-content: center;
+
+    @include button($width: 88px);
+  }
+}
