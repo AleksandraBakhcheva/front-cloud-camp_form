@@ -1,3 +1,13 @@
-.user-input {
-  margin-top: 24px;
+@import "../../styles/General.scss";
+
+.main__container {
+  @include formSize($height: 704px, $border-radius: 12px 12px 0px 0px);
+
+  .user-input {
+    margin-top: 24px;
+  }
+
+  &_button {
+    margin-top: 48px;
+  }
 }

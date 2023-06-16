@@ -11,7 +11,7 @@ export default function Main() {
   const navigateNextPage = useNavigate();
 
   return (
-    <>
+    <div className="main__container">
       <Header />
       <Formik
         initialValues={{
@@ -55,11 +55,13 @@ export default function Main() {
               placeholder="tim.jennings@example.com"
             />
           </div>
-          <div>
-            <Button>Начать</Button>
+          <div className="main__container_button">
+            <Button type="submit" id="button-start">
+              Начать
+            </Button>
           </div>
         </Form>
       </Formik>
-    </>
+    </div>
   );
 }
