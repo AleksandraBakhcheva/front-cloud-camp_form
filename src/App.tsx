@@ -3,7 +3,7 @@ import Main from "./assets/pages/Main/Main";
 import Step1 from "./assets/pages/Step1/Step1";
 import Step2 from "./assets/pages/Step2/Step2";
 import Step3 from "./assets/pages/Step3/Step3";
-import { Routes, Route, Navigate } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 
 function App() {
   return (
