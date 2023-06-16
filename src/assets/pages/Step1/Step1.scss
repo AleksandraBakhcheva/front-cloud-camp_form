@@ -1,0 +1,44 @@
+@import "../../styles/General.scss";
+
+.step1__container {
+  @include formSize;
+  padding-left: 110px;
+
+  .user-input {
+    margin-top: 24px;
+  }
+
+  form {
+    margin-top: 66px;
+  }
+
+  select {
+    display: block;
+    width: 400px;
+    height: 44px;
+    margin-top: 8px;
+    border: 1px solid rgba(0, 0, 0, 0.16);
+    border-radius: 4px;
+    background: rgba(0, 0, 0, 0.04);
+  }
+
+  &_buttons {
+    display: flex;
+    margin-top: 48px;
+    justify-content: space-between;
+
+    :first-child button {
+      @include button(
+        $width: 73px,
+        $border: 1.5px solid $button-bg-color,
+        $color: $button-bg-color,
+        $background-color: $button-color
+      );
+    }
+
+    :nth-child(2) {
+      @include button($width: 73px);
+      margin-right: 98px;
+    }
+  }
+}
