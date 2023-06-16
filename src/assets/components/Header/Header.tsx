@@ -1,4 +1,5 @@
 import "./Header.scss";
+import { Link } from "react-router-dom";
 import folder from "../../images/folder.svg";
 
 export default function Header() {
@@ -9,18 +10,24 @@ export default function Header() {
         <div className="header__container_info">
           <h1>Иван Иванов</h1>
           <div className="header__container_contacts">
-            <div>
-              <img src={folder} alt="folder_icon" />
-              <p>Telegram</p>
-            </div>
-            <div>
-              <img src={folder} alt="folder_icon" />
-              <p>GitHub</p>
-            </div>
-            <div>
-              <img src={folder} alt="folder_icon" />
-              <p>Resume</p>
-            </div>
+            <Link to="...">
+              <div>
+                <img src={folder} alt="folder_icon_telegram" />
+                <p>Telegram</p>
+              </div>
+            </Link>
+            <Link to="...">
+              <div>
+                <img src={folder} alt="folder_icon_github" />
+                <p>GitHub</p>
+              </div>
+            </Link>
+            <Link to="...">
+              <div>
+                <img src={folder} alt="folder_icon_resume" />
+                <p>Resume</p>
+              </div>
+            </Link>
           </div>
         </div>
       </div>

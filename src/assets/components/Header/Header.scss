@@ -1,10 +1,12 @@
+@import "../../styles/General.scss";
+
 .header__container {
   &_box {
     display: flex;
     padding-bottom: 24px;
     justify-content: flex-start;
     align-items: center;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+    border-bottom: 1px solid $header-border-bottom;
   }
 
   &_avatar {
@@ -18,8 +20,8 @@
     font-weight: 400;
     line-height: 52px;
     border-radius: 100px;
-    color: #212830;
-    background-color: #d5e4f7;
+    color: $header-avatar-color;
+    background-color: $header-avatar-bg-color;
   }
 
   &_info {
@@ -29,10 +31,9 @@
 
   h1 {
     margin-bottom: 8px;
-    font-family: "SB Sans Interface";
     font-size: 20px;
     line-height: 26px;
-    color: #333333;
+    color: $header-color;
   }
 
   &_contacts {
@@ -43,12 +44,17 @@
     div {
       display: flex;
       flex-direction: row;
+      cursor: pointer;
     }
 
     p {
       margin-left: 4px;
       margin-right: 16px;
-      color: #5558fa;
+      color: $social-networks-color;
+    }
+
+    a {
+      text-decoration: none;
     }
   }
 }
