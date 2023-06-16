@@ -1,0 +1,65 @@
+@import "../styles/Variables.scss";
+
+@mixin formSize($height: 800px, $border-radius: 12px 12px 12px 12px) {
+  max-width: 900px;
+  height: $height;
+  margin: 0 auto;
+  padding: 24px;
+  margin-top: 24px;
+  background-color: $form-general-background;
+  border-radius: $border-radius;
+}
+
+@mixin button(
+  $width: 79px,
+  $border: none,
+  $color: $button-color,
+  $background-color: $button-bg-color
+) {
+  width: $width;
+  height: 44px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  border: $border;
+  border-radius: 4px;
+  cursor: pointer;
+  color: $color;
+  background-color: $background-color;
+}
+
+%modalWindow {
+  position: fixed;
+  width: 460px;
+  height: 312px;
+  top: calc(58% - 312px / 2 - 0.5px);
+  left: calc(50% - 460px / 2);
+  box-shadow: $modal-box-shadow;
+  border-radius: 12px;
+  background-color: $form-general-background;
+}
+
+@mixin modalIcon($background-color: $modal-success-color) {
+  position: relative;
+  margin: 0 auto;
+  margin-top: 50px;
+  width: 80px;
+  height: 80px;
+  border-radius: 100px;
+  background-color: $background-color;
+}
+
+%modalImage {
+  position: absolute;
+  left: 25%;
+  top: 25%;
+}
+
+%modalHeader {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 26px;
+  color: $header-color;
+}
