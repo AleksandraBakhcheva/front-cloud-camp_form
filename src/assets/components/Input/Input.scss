@@ -1,19 +1,22 @@
+@import "../../styles/General.scss";
+
 input {
   display: block;
   width: 400px;
   height: 44px;
   margin-top: 8px;
-  border: 1px solid rgba(0, 0, 0, 0.16);
-  border-radius: 4px;
-  background: rgba(0, 0, 0, 0.04);
   padding: 0.65rem 0.5rem;
+  border: $input-border;
+  border-radius: 4px;
+  background-color: $input-bg-color;
 }
 
 .error {
-  font-size: 12px;
-  color: red;
   width: 400px;
   margin-top: 0.25rem;
+  font-size: 12px;
+  color: $error-msg-color;
+
   &:before {
     content: "❌ ";
     font-size: 10px;
