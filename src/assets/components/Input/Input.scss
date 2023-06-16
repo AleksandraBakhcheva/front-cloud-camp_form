@@ -12,13 +12,5 @@ input {
 }
 
 .error {
-  width: 400px;
-  margin-top: 0.25rem;
-  font-size: 12px;
-  color: $error-msg-color;
-
-  &:before {
-    content: "❌ ";
-    font-size: 10px;
-  }
+  @extend %errorMsg;
 }
