@@ -1,13 +1,8 @@
 import "./Input.scss";
+import { InputProps } from "../../utils/types";
 import { useField } from "formik";
 
-export const Input = (props: {
-  label: string;
-  id: string;
-  name: string;
-  type: string;
-  placeholder: string;
-}) => {
+export const Input = (props: InputProps) => {
   const { label } = props;
   const [field, meta] = useField(props);
 

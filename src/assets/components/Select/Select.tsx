@@ -1,14 +1,8 @@
 import "./Select.scss";
+import { SelectProps } from "../../utils/types";
 import { useField } from "formik";
 
-type ContainerProps = {
-  label: string;
-  id: string;
-  name: string;
-  children: React.ReactNode;
-};
-
-export const Select = (props: ContainerProps) => {
+export const Select = (props: SelectProps) => {
   const { label } = props;
   const [field, meta] = useField(props);
 
