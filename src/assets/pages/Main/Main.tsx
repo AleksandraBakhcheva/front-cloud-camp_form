@@ -2,12 +2,12 @@ import "./Main.scss";
 import Header from "../../components/Header/Header";
 import { Button } from "../../components/Button/Button";
 import { Input } from "../../components/Input/Input";
+import { MaskedPhoneInput } from "../../components/Input/MaskedInput";
 import { useNavigate } from "react-router-dom";
 import { Formik, Form } from "formik";
 import * as Yup from "yup";
 
 export default function Main() {
-  const phoneRegExp = /([+]\d[ ]?[(]?\d{3}[)]?[ ]?\d{2,3}[- ]?\d{2}[- ]?\d{2})/;
   const navigateNextPage = useNavigate();
 
   return (
@@ -19,12 +19,7 @@ export default function Main() {
           email: "",
         }}
         validationSchema={Yup.object({
-          phone: Yup.string()
-            .matches(
-              phoneRegExp,
-              "Некорректный номер, должен соответствовать типу +7 (900) 000-00-00"
-            )
-            .required("Данное поле обязательно к заполнению"),
+          phone: Yup.string().required("Данное поле обязательно к заполнению"),
           email: Yup.string()
             .email("Некорректный адрес электронной почты")
             .required("Данное поле обязательно к заполнению"),
@@ -32,18 +27,19 @@ export default function Main() {
         onSubmit={async (values, { setSubmitting }) => {
           await new Promise((r) => setTimeout(r, 500));
           setSubmitting(false);
-          console.log(JSON.stringify(values, null, 2));
+          localStorage.setItem("phone", values.phone);
+          localStorage.setItem("email", values.email);
           navigateNextPage("/step1");
         }}
       >
         <Form>
           <div className="user-input">
-            <Input
+            <MaskedPhoneInput
               label="Номер телефона"
               id="phone"
               name="phone"
               type="text"
-              placeholder="+7 (999) 999-99-99"
+              placeholder="+7 (966) 105-00-22"
             />
           </div>
           <div className="user-input">
@@ -52,7 +48,7 @@ export default function Main() {
               id="email"
               name="email"
               type="email"
-              placeholder="tim.jennings@example.com"
+              placeholder="alexandra.bakhcheva@gmail.com"
             />
           </div>
           <div className="main__container_button">
