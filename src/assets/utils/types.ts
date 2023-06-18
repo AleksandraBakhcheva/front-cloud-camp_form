@@ -44,6 +44,7 @@ export type PostData = {
   advantages1: string | null;
   advantages2: string | null;
   advantages3: string | null;
+  checkboxes?: boolean[];
   radio: string | null;
   about: string | null;
 };

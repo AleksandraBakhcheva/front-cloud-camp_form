@@ -27,9 +27,9 @@
     width: 400px;
     height: 44px;
     margin-top: 8px;
-    border: 1px solid rgba(0, 0, 0, 0.16);
+    border: $select-border;
     border-radius: 4px;
-    background: rgba(0, 0, 0, 0.04);
+    background-color: $modal-bg-cross;
 
     @media screen and (max-width: $small) {
       width: 100%;

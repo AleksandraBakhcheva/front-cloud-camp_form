@@ -34,9 +34,9 @@
 
     .error {
       position: absolute;
+      top: 60%;
       flex-direction: row;
       justify-content: flex-start;
-      top: 60%;
     }
 
     button {
@@ -46,19 +46,23 @@
         $color: $button-bg-color,
         $background-color: $button-color
       );
-      margin-top: 8px;
     }
   }
 
   &_checkboxes {
     margin-top: 24px;
 
+    label {
+      margin-top: 4px;
+    }
+
     input {
       display: flex;
-      flex-direction: row;
       width: 16px;
       height: 16px;
-      border: 1.5px solid rgba(0, 0, 0, 0.24);
+      margin-right: 2px;
+      flex-direction: row;
+      border: $checkbox-radio-border;
       border-radius: 4px;
     }
   }
@@ -66,10 +70,15 @@
   &_radios {
     margin-top: 24px;
 
+    label {
+      margin-top: 4px;
+    }
+
     input {
-      width: 20px;
-      height: 20px;
-      border: 1.5px solid rgba(0, 0, 0, 0.24);
+      width: 16px;
+      height: 16px;
+      margin-right: 2px;
+      border: $checkbox-radio-border;
       border-radius: 100px;
     }
   }

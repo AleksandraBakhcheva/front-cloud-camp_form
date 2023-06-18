@@ -11,7 +11,6 @@ import * as Yup from "yup";
 export default function Step1() {
   const nicknameRegExp = /^[A-zА-яЁё0-9]*$/;
   const nameSurnameRegExp = /^[A-zА-яЁё]+$/;
-
   const navigateNextPage = useNavigate();
 
   return (

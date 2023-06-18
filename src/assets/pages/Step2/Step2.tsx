@@ -10,7 +10,6 @@ import * as Yup from "yup";
 
 export default function Step2() {
   const advantagesRegExp = /^[A-zА-яЁё]+$/;
-
   const navigateNextPage = useNavigate();
 
   return (
@@ -44,11 +43,8 @@ export default function Step2() {
           localStorage.setItem("advantages1", values.advantages1);
           localStorage.setItem("advantages2", values.advantages2);
           localStorage.setItem("advantages3", values.advantages3);
-          //localStorage.setItem("checked", values.);
+          //localStorage.setItem("checked", values.checked);
           localStorage.setItem("radio", values.radio);
-          console.log(JSON.stringify(values, null, 2));
-          console.log(values.checked);
-
           navigateNextPage("/step3");
         }}
       >

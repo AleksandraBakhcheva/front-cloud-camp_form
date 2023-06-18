@@ -1,31 +1,33 @@
 import "./Step3.scss";
-import { Formik, Form } from "formik";
+import stepper_3 from "../../images/stepper_3.svg";
 import { Button } from "../../components/Button/Button";
 import { Link } from "react-router-dom";
-import { useState } from "react";
 import { ModalSuccess } from "../../components/Modal/ModalSuccess";
 import { ModalFail } from "../../components/Modal/ModalFail";
-import { newUser } from "../../utils/interfaces";
-import { TextArea } from "../../components/TextArea/TextArea";
-import * as Yup from "yup";
-import stepper_3 from "../../images/stepper_3.svg";
 import { PostData } from "../../utils/types";
+import { newUser } from "../../utils/user";
+import { TextArea } from "../../components/TextArea/TextArea";
+import { Formik, Form } from "formik";
+import { useState } from "react";
+import * as Yup from "yup";
 
 export default function Step3() {
   const endPoint = "https://api.sbercloud.ru/content/v1/bootcamp/frontend";
   const [modalSuccess, setModalSuccess] = useState(false);
   const [modalFail, setModalFail] = useState(false);
 
+  console.log(newUser);
+
   async function sendDataToServer(data: PostData) {
     try {
-      const usersCollection = await fetch(endPoint, {
+      const newUser = await fetch(endPoint, {
         method: "POST",
         headers: {
           "Content-Type": "application/json; charset=utf-8",
         },
         body: JSON.stringify(data),
       });
-      const responseReceived = await usersCollection.json();
+      const responseReceived = await newUser.json();
       if (responseReceived.status) {
         setModalSuccess(true);
         const windowBackground =
@@ -59,8 +61,8 @@ export default function Step3() {
           })}
           onSubmit={async (values, { setSubmitting }) => {
             await new Promise((r) => setTimeout(r, 500));
-            setSubmitting(false);
             localStorage.setItem("about", values.about);
+            setSubmitting(false);
             sendDataToServer(newUser);
           }}
         >

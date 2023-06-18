@@ -9,7 +9,6 @@ import * as Yup from "yup";
 
 export default function Main() {
   const navigateNextPage = useNavigate();
-
   const emailRegExp = /^([\w\d._\-#])+@([\w\d._\-#]+[.][\w\d._\-#]+)$/i;
 
   return (

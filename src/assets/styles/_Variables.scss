@@ -12,10 +12,12 @@ $input-bg-color: #0000000a;
 $error-msg-color: #ff0000;
 $modal-success-color: #05ae7126;
 $modal-fail-color: #e84e5826;
-$modal-bg-cross: rgba(0, 0, 0, 0.04);
+$modal-bg-cross: #0000000a;
 
 /* other */
 $input-border: 1px solid #00000029;
+$select-border: 1px solid #00000029;
+$checkbox-radio-border: 1.5px solid rgba(0, 0, 0, 0.24);
 $modal-box-shadow: 0px 8px 32px #00000014;
 
 /* media queries */
