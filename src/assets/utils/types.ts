@@ -20,3 +20,24 @@ export type CheckboxRadioProps = {
   name: string;
   value: string;
 };
+
+export type TextAreaProps = {
+  id: string;
+  label: string;
+  name: string;
+  placeholder: string;
+};
+
+export type PostData = {
+  phone: string | null;
+  email: string | null;
+  nickname: string | null;
+  name: string | null;
+  surname: string | null;
+  sex: string | null;
+  advantages1: string | null;
+  advantages2: string | null;
+  advantages3: string | null;
+  radio: string | null;
+  about: string | null;
+};
