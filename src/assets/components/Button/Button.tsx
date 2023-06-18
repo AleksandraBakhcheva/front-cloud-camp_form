@@ -1,10 +1,7 @@
 import "./Button.scss";
+import { ButtonProps } from "../../utils/types";
 
-export const Button = (props: {
-  id: string;
-  type: "submit" | "reset" | "button";
-  children: string;
-}) => {
+export const Button = (props: ButtonProps) => {
   const { type, children } = props;
 
   return <button type={type}>{children}</button>;

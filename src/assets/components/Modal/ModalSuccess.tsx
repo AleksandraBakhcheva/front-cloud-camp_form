@@ -1,7 +1,7 @@
 import "./ModalSuccess.scss";
+import vector_tick from "../../images/vector_tick.svg";
 import { Button } from "../Button/Button";
 import { Link } from "react-router-dom";
-import vector_tick from "../../images/vector_tick.svg";
 
 export const ModalSuccess = () => {
   return (

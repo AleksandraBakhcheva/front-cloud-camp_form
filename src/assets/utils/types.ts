@@ -28,6 +28,12 @@ export type TextAreaProps = {
   placeholder: string;
 };
 
+export type ButtonProps = {
+  id: string;
+  type: "submit" | "reset" | "button";
+  children: string;
+};
+
 export type PostData = {
   phone: string | null;
   email: string | null;

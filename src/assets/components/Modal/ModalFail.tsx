@@ -1,8 +1,8 @@
 import "./ModalFail.scss";
-import { Button } from "../Button/Button";
-import { Link } from "react-router-dom";
 import cross from "../../images/cross.svg";
 import vector_cross from "../../images/vector_cross.svg";
+import { Button } from "../Button/Button";
+import { Link } from "react-router-dom";
 
 export const ModalFail = () => {
   return (
