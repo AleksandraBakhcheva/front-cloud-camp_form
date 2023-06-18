@@ -8,6 +8,10 @@ input {
   border: $input-border;
   border-radius: 4px;
   background-color: $input-bg-color;
+
+  @media screen and (max-width: $small) {
+    width: 100%;
+  }
 }
 
 .error {

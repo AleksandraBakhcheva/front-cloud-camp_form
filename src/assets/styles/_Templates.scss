@@ -70,6 +70,10 @@
   font-size: 12px;
   color: $error-msg-color;
 
+  @media screen and (max-width: $medium) {
+    width: 100%;
+  }
+
   &:before {
     content: "❌ ";
     font-size: 10px;

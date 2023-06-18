@@ -7,6 +7,10 @@
     justify-content: flex-start;
     align-items: center;
     border-bottom: 1px solid $header-border-bottom;
+
+    @media screen and (max-width: $small) {
+      flex-direction: column;
+    }
   }
 
   &_avatar {
@@ -40,6 +44,10 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+
+    @media screen and (max-width: $small) {
+      justify-content: center;
+    }
 
     div {
       display: flex;
