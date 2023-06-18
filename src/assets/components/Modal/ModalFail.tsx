@@ -18,8 +18,8 @@ export const ModalFail = () => {
           <img src={vector_cross} alt="vector_cross-icon" />
         </div>
         <div className="modal-fail__container_button">
-          <Link to="/step3">
-            <Button type="submit" id="button-close">
+          <Link to="/">
+            <Button type="button" id="button-close">
               Закрыть
             </Button>
           </Link>
