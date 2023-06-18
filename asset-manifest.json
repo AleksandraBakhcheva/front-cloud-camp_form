@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/front-cloud-camp_form/static/css/main.965ca44a.css",
-    "main.js": "/front-cloud-camp_form/static/js/main.4f1994b5.js",
+    "main.css": "/front-cloud-camp_form/static/css/main.2beffa86.css",
+    "main.js": "/front-cloud-camp_form/static/js/main.342f23a0.js",
     "static/media/stepper_1.svg": "/front-cloud-camp_form/static/media/stepper_1.d651f3534db989923ae90724dc99357f.svg",
     "static/media/stepper_3.svg": "/front-cloud-camp_form/static/media/stepper_3.95b132300293b0844641143076b7976b.svg",
     "static/media/stepper_2.svg": "/front-cloud-camp_form/static/media/stepper_2.82b0803016bebfb9ce34dbbd20a3c9fe.svg",
@@ -11,11 +11,11 @@
     "static/media/vector_tick.svg": "/front-cloud-camp_form/static/media/vector_tick.a20946ae27d9e9492ba16bbe8e828f94.svg",
     "static/media/cross.svg": "/front-cloud-camp_form/static/media/cross.12697ca38f724dc86c5f432f1c3d34de.svg",
     "index.html": "/front-cloud-camp_form/index.html",
-    "main.965ca44a.css.map": "/front-cloud-camp_form/static/css/main.965ca44a.css.map",
-    "main.4f1994b5.js.map": "/front-cloud-camp_form/static/js/main.4f1994b5.js.map"
+    "main.2beffa86.css.map": "/front-cloud-camp_form/static/css/main.2beffa86.css.map",
+    "main.342f23a0.js.map": "/front-cloud-camp_form/static/js/main.342f23a0.js.map"
   },
   "entrypoints": [
-    "static/css/main.965ca44a.css",
-    "static/js/main.4f1994b5.js"
+    "static/css/main.2beffa86.css",
+    "static/js/main.342f23a0.js"
   ]
 }
