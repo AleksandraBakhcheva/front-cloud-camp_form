@@ -1,12 +1,12 @@
 import "./Step1.scss";
+import stepper_1 from "../../images/stepper_1.svg";
 import { Button } from "../../components/Button/Button";
 import { Input } from "../../components/Input/Input";
 import { Select } from "../../components/Select/Select";
 import { Sex } from "../../utils/enums";
 import { Link, useNavigate } from "react-router-dom";
-import { Formik, Form, Field } from "formik";
+import { Formik, Form } from "formik";
 import * as Yup from "yup";
-import stepper_1 from "../../images/stepper_1.svg";
 
 export default function Step1() {
   const nicknameRegExp = /^[A-zА-яЁё0-9]*$/;
@@ -42,7 +42,10 @@ export default function Step1() {
         onSubmit={async (values, { setSubmitting }) => {
           await new Promise((r) => setTimeout(r, 500));
           setSubmitting(false);
-          console.log(JSON.stringify(values, null, 2));
+          localStorage.setItem("nickname", values.nickname);
+          localStorage.setItem("name", values.name);
+          localStorage.setItem("surname", values.surname);
+          localStorage.setItem("sex", values.sex);
           navigateNextPage("/step2");
         }}
       >
