@@ -10,6 +10,8 @@ import * as Yup from "yup";
 export default function Main() {
   const navigateNextPage = useNavigate();
 
+  const emailRegExp = /^([\w\d._\-#])+@([\w\d._\-#]+[.][\w\d._\-#]+)$/i;
+
   return (
     <div className="main__container">
       <Header />
@@ -21,7 +23,7 @@ export default function Main() {
         validationSchema={Yup.object({
           phone: Yup.string().required("Данное поле обязательно к заполнению"),
           email: Yup.string()
-            .email("Некорректный адрес электронной почты")
+            .matches(emailRegExp, "Некорректный адрес электронной почты")
             .required("Данное поле обязательно к заполнению"),
         })}
         onSubmit={async (values, { setSubmitting }) => {
