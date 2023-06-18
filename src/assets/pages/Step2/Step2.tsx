@@ -54,23 +54,31 @@ export default function Step2() {
       >
         <Form>
           <div className="user-input">
+            <label>Ваши сильные стороны</label>
             <div>
-              <Input
-                label="Ваши сильные стороны"
-                id="field-advantages-1"
-                name="advantages1"
-                type="text"
-                placeholder="Введите навык"
-              />
-              <Link to="">
+              <div>
                 <img
                   src={button_delete}
                   alt="button-delete"
                   id="button-remove-1"
                 />
-              </Link>
+              </div>
+              <Input
+                label=""
+                id="field-advantages-1"
+                name="advantages1"
+                type="text"
+                placeholder="Введите навык"
+              />
             </div>
             <div>
+              <div>
+                <img
+                  src={button_delete}
+                  alt="button-delete"
+                  id="button-remove-2"
+                />
+              </div>
               <Input
                 label=""
                 id="field-advantages-2"
@@ -78,15 +86,15 @@ export default function Step2() {
                 type="text"
                 placeholder="Введите навык"
               />
-              <Link to="">
+            </div>
+            <div>
+              <div>
                 <img
                   src={button_delete}
                   alt="button-delete"
-                  id="button-remove-2"
+                  id="button-remove-3"
                 />
-              </Link>
-            </div>
-            <div>
+              </div>
               <Input
                 label=""
                 id="field-advantages-3"
@@ -94,13 +102,6 @@ export default function Step2() {
                 type="text"
                 placeholder="Введите навык"
               />
-              <Link to="">
-                <img
-                  src={button_delete}
-                  alt="button-delete"
-                  id="button-remove-3"
-                />
-              </Link>
             </div>
             <Button type="button" id="button-add">
               +

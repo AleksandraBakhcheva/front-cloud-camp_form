@@ -18,20 +18,25 @@
     margin-top: 66px;
 
     div {
+      display: flex;
       position: relative;
-      margin-top: 8px;
+      padding-bottom: 21px;
+      flex-direction: row-reverse;
+      justify-content: flex-end;
+      align-items: baseline;
     }
 
     img {
-      position: absolute;
       width: 15px;
       height: 15px;
-      top: 24%;
-      left: 54%;
+      margin-left: 10px;
     }
 
-    #button-remove-1 {
-      top: 55%;
+    .error {
+      position: absolute;
+      flex-direction: row;
+      justify-content: flex-start;
+      top: 60%;
     }
 
     button {
