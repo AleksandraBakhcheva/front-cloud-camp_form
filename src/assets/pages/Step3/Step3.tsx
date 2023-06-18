@@ -16,8 +16,6 @@ export default function Step3() {
   const [modalSuccess, setModalSuccess] = useState(false);
   const [modalFail, setModalFail] = useState(false);
 
-  console.log(newUser);
-
   async function sendDataToServer(data: PostData) {
     try {
       const newUser = await fetch(endPoint, {
