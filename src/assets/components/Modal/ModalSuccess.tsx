@@ -6,12 +6,12 @@ import vector_tick from "../../images/vector_tick.svg";
 export const ModalSuccess = () => {
   return (
     <>
-      <div className="modal__container">
+      <div className="modal-success__container">
         <h1>Форма успешно отправлена</h1>
-        <div className="modal__container_icon">
+        <div className="modal-success__container_icon">
           <img src={vector_tick} alt="vector_tick-icon" />
         </div>
-        <div className="modal__container_button">
+        <div className="modal-success__container_button">
           <Link to="/">
             <Button type="submit" id="button-to-main">
               На главную

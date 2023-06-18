@@ -7,17 +7,17 @@ import vector_cross from "../../images/vector_cross.svg";
 export const ModalFail = () => {
   return (
     <>
-      <div className="modal__container">
-        <div className="modal__container_header">
+      <div className="modal-fail__container">
+        <div className="modal-fail__container_header">
           <h1>Ошибка</h1>
           <div>
             <img src={cross} alt="cross-icon" />
           </div>
         </div>
-        <div className="modal__container_icon">
+        <div className="modal-fail__container_icon">
           <img src={vector_cross} alt="vector_cross-icon" />
         </div>
-        <div className="modal__container_button">
+        <div className="modal-fail__container_button">
           <Link to="/step3">
             <Button type="submit" id="button-close">
               Закрыть
