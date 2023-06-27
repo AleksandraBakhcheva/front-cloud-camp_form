@@ -2,7 +2,7 @@ import "./Main.scss";
 import Header from "../../components/Header/Header";
 import { Button } from "../../components/Button/Button";
 import { Input } from "../../components/Input/Input";
-import { MaskedPhoneInput } from "../../components/Input/MaskedInput";
+import { MaskedPhoneInput } from "../../components/Input/MaskedPhoneInput";
 import { useNavigate } from "react-router-dom";
 import { Formik, Form } from "formik";
 import * as Yup from "yup";
@@ -16,8 +16,8 @@ export default function Main() {
       <Header />
       <Formik
         initialValues={{
-          phone: "",
-          email: "",
+          phone: "+7 (966) 105-00-22",
+          email: "alexandra.bakhcheva@gmail.com",
         }}
         validationSchema={Yup.object({
           phone: Yup.string().required("Данное поле обязательно к заполнению"),
@@ -28,8 +28,6 @@ export default function Main() {
         onSubmit={async (values, { setSubmitting }) => {
           await new Promise((r) => setTimeout(r, 500));
           setSubmitting(false);
-          localStorage.setItem("phone", values.phone);
-          localStorage.setItem("email", values.email);
           navigateNextPage("/step1");
         }}
       >
