@@ -1,0 +1,98 @@
+@import "../../styles/General.scss";
+
+.progress-bar__container {
+  max-width: 900px;
+  max-height: 48px;
+
+  &_steps {
+    display: flex;
+    height: 8px;
+    margin-right: 98px;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 100px;
+    background-color: $input-bg-color;
+
+    &.step-2 {
+      background: linear-gradient(
+        80deg,
+        $progress-bar-bg-color 50%,
+        $input-bg-color 0%
+      );
+
+      :first-child {
+        content: url(../../images/check.svg);
+      }
+
+      :nth-child(2) {
+        background-color: $progress-bar-bg-color;
+        content: url(../../images/dot.svg);
+      }
+    }
+
+    &.step-3 {
+      background-color: $progress-bar-bg-color;
+
+      :first-child {
+        content: url(../../images/check.svg);
+      }
+
+      :nth-child(2) {
+        background-color: $progress-bar-bg-color;
+        content: url(../../images/check.svg);
+      }
+
+      :nth-child(3) {
+        background-color: $progress-bar-bg-color;
+        content: url(../../images/dot.svg);
+      }
+    }
+
+    @media screen and (max-width: $medium) {
+      margin-right: 0;
+    }
+
+    span {
+      width: 16px;
+      height: 16px;
+      border-radius: 100px;
+      background-color: $progress-bar-step-bg;
+    }
+
+    span:first-child {
+      background-color: $progress-bar-bg-color;
+    }
+
+    span:first-child:before {
+      content: url(../../images/dot.svg);
+    }
+  }
+}
+
+.progress-bar__numbers {
+  display: flex;
+  margin-top: 12px;
+  justify-content: space-between;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 20px;
+  margin-right: 98px;
+  color: $progress-bar-numbers-color;
+
+  span:first-child {
+    color: $progress-bar-bg-color;
+  }
+
+  &.step-2 span:nth-child(2) {
+    color: $progress-bar-bg-color;
+  }
+
+  &.step-3 {
+    color: $progress-bar-bg-color;
+  }
+
+  @media screen and (max-width: $medium) {
+    margin-right: 0;
+  }
+}
