@@ -16,6 +16,16 @@
 
   .user-input {
     margin-top: 66px;
+
+    &_counter {
+      display: flex;
+      margin-right: 86px;
+      justify-content: flex-end;
+
+      @media screen and (max-width: $medium) {
+        margin-right: 0;
+      }
+    }
   }
 
   textarea {
