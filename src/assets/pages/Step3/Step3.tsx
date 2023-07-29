@@ -26,6 +26,7 @@ function Step3() {
           }}
           validationSchema={Yup.object({
             about: Yup.string()
+              .trim()
               .max(200, "Максимальная длина 200 символов")
               .required("Данное поле обязательно к заполнению"),
           })}
@@ -47,10 +48,9 @@ function Step3() {
                   placeholder="Расскажите о себе"
                 />
                 <div className="user-input_counter">
-                  {values.about.split(" ").join("").length} / 200
+                  {values.about.length}/200
                 </div>
               </div>
-
               <div className="step3__container_buttons">
                 <Link to="/step2">
                   <Button type="submit" id="button-back">
