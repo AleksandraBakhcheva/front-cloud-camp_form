@@ -14,8 +14,6 @@ function Step2() {
   const advantagesRegExp = /^[A-zА-яЁё]+$/;
   const navigateNextPage = useNavigate();
 
-  const advantages: string[] = [""];
-
   const checkboxGroup = [
     { key: "1", value: "1" },
     { key: "2", value: "2" },
@@ -63,7 +61,7 @@ function Step2() {
           navigateNextPage("/step3");
         }}
       >
-        {({ values }) => (
+        {({ values, errors }) => (
           <Form>
             <div className="user-input">
               <label>Ваши сильные стороны</label>
@@ -115,6 +113,9 @@ function Step2() {
                   />
                 </div>
               ))}
+              {errors.checkboxGroup && (
+                <div className="error">{errors.checkboxGroup}</div>
+              )}
             </div>
             <div className="step2__container_radios">
               <div id="radio-group">Radio group</div>
@@ -129,6 +130,9 @@ function Step2() {
                   />
                 </div>
               ))}
+              {errors.radioGroup && (
+                <div className="error">{errors.radioGroup}</div>
+              )}
             </div>
             <div className="step2__container_buttons">
               <Link to="/step1">
