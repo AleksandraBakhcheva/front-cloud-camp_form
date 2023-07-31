@@ -76,7 +76,11 @@ function Step2() {
                               src={button_delete}
                               alt="button-delete"
                               id={`button-remove-${index + 1}`}
-                              onClick={() => remove(index)}
+                              onClick={() =>
+                                values.advantages.length > 1
+                                  ? remove(index)
+                                  : ""
+                              }
                             />
                           </div>
                           <Input
