@@ -1,6 +1,6 @@
 import "./Step2.scss";
+import { ProgressBar } from "../../components/ProgressBar/ProgressBar";
 import button_delete from "../../images/button_delete.svg";
-import stepper_2 from "../../images/stepper_2.svg";
 import { Button } from "../../components/Button/Button";
 import { Input } from "../../components/Input/Input";
 import { CheckboxRadio } from "../../components/CheckboxRadio/CheckboxRadio";
@@ -14,9 +14,23 @@ function Step2() {
   const advantagesRegExp = /^[A-zА-яЁё]+$/;
   const navigateNextPage = useNavigate();
 
+  const advantages: string[] = [""];
+
+  const checkboxGroup = [
+    { key: "1", value: "1" },
+    { key: "2", value: "2" },
+    { key: "3", value: "3" },
+  ];
+
+  const radioGroup = [
+    { key: "1", value: "1" },
+    { key: "2", value: "2" },
+    { key: "3", value: "3" },
+  ];
+
   return (
     <div className="step2__container">
-      <img src={stepper_2} alt="step_2" />
+      <ProgressBar step={2} />
       <Formik
         initialValues={{
           advantages: [
@@ -24,8 +38,10 @@ function Step2() {
               advantage: "",
             },
           ],
+          checkboxGroup: [],
+          radioGroup: "",
         }}
-        validationSchema={Yup.object({
+        validationSchema={Yup.object().shape({
           advantages: Yup.array().of(
             Yup.object().shape({
               advantage: Yup.string()
@@ -34,10 +50,16 @@ function Step2() {
                 .required("Данное поле обязательно к заполнению"),
             })
           ),
+          checkboxGroup: Yup.array().min(
+            1,
+            "Необходимо выбрать одно или несколько полей"
+          ),
+          radioGroup: Yup.string().required("Необходимо выбрать одно из полей"),
         })}
         onSubmit={async (values, { setSubmitting }) => {
           await new Promise((r) => setTimeout(r, 500));
           setSubmitting(false);
+          console.log(values);
           navigateNextPage("/step3");
         }}
       >
@@ -81,55 +103,32 @@ function Step2() {
             </div>
             <div className="step2__container_checkboxes">
               <div id="checkbox-group">Checkbox group</div>
-              <div role="group" aria-labelledby="checkbox-group">
-                <CheckboxRadio
-                  id="field-checkbox-group-option-1"
-                  name="checked"
-                  value="1"
-                  label="1"
-                  inputtype="checkbox"
-                />
-                <CheckboxRadio
-                  id="field-checkbox-group-option-2"
-                  name="checked"
-                  value="2"
-                  label="2"
-                  inputtype="checkbox"
-                />
-                <CheckboxRadio
-                  id="field-checkbox-group-option-3"
-                  name="checked"
-                  value="3"
-                  label="3"
-                  inputtype="checkbox"
-                />
-              </div>
+              {checkboxGroup.map((item, index) => (
+                <div key={index}>
+                  <CheckboxRadio
+                    key={index}
+                    id={`field-checkbox-group-option-${index + 1}`}
+                    name="checkboxGroup"
+                    label={`${index + 1}`}
+                    value={`${index + 1}`}
+                    type="checkbox"
+                  />
+                </div>
+              ))}
             </div>
             <div className="step2__container_radios">
               <div id="radio-group">Radio group</div>
-              <div role="group" aria-labelledby="radio-group">
-                <CheckboxRadio
-                  id="field-radio-group-option-1"
-                  name="radio"
-                  value="1"
-                  label="1"
-                  inputtype="radio"
-                />
-                <CheckboxRadio
-                  id="field-radio-group-option-2"
-                  name="radio"
-                  value="2"
-                  label="2"
-                  inputtype="radio"
-                />
-                <CheckboxRadio
-                  id="field-radio-group-option-3"
-                  name="radio"
-                  value="3"
-                  label="3"
-                  inputtype="radio"
-                />
-              </div>
+              {radioGroup.map((item, index) => (
+                <div key={index}>
+                  <CheckboxRadio
+                    id={`field-radio-group-option-${index + 1}`}
+                    name="radioGroup"
+                    label={`${index + 1}`}
+                    value={`${index + 1}`}
+                    type="radio"
+                  />
+                </div>
+              ))}
             </div>
             <div className="step2__container_buttons">
               <Link to="/step1">
