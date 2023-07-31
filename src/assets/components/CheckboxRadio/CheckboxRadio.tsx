@@ -3,15 +3,18 @@ import { CheckboxRadioProps } from "../../utils/types";
 import { useField, Field } from "formik";
 
 export const CheckboxRadio = (props: CheckboxRadioProps) => {
-  const [field] = useField({ ...props });
-  const { label, inputtype } = props;
+  const [field, meta] = useField({ ...props });
+  const { label } = props;
 
   return (
     <>
       <label>
-        <Field type={inputtype} {...field} {...props} />
+        <Field {...field} {...props} />
         {label}
       </label>
+      {meta.touched && meta.error ? (
+        <div className="error">{meta.error}</div>
+      ) : null}
     </>
   );
 };
