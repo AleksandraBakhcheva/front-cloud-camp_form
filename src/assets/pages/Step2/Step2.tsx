@@ -11,7 +11,7 @@ import store from "../../store";
 import { FieldArray, Form, Formik } from "formik";
 
 function Step2() {
-  const advantagesRegExp = /^[A-zА-яЁё]+$/;
+  const advantagesRegExp = /^[A-zА-яЁё\s]+$/;
   const navigateNextPage = useNavigate();
 
   const checkboxGroup = [
@@ -31,22 +31,16 @@ function Step2() {
       <ProgressBar step={2} />
       <Formik
         initialValues={{
-          advantages: [
-            {
-              advantage: "",
-            },
-          ],
+          advantages: [""],
           checkboxGroup: [],
           radioGroup: "",
         }}
         validationSchema={Yup.object().shape({
           advantages: Yup.array().of(
-            Yup.object().shape({
-              advantage: Yup.string()
-                .max(30, "Максимальная длина 30 символов")
-                .matches(advantagesRegExp, "Можно использовать только буквы")
-                .required("Данное поле обязательно к заполнению"),
-            })
+            Yup.string()
+              .max(30, "Максимальная длина 30 символов")
+              .matches(advantagesRegExp, "Можно использовать только буквы")
+              .required("Данное поле обязательно к заполнению")
           ),
           checkboxGroup: Yup.array().min(
             1,
@@ -86,7 +80,7 @@ function Step2() {
                           <Input
                             key={index}
                             id={`field-advantages-${index + 1}`}
-                            name={`advantages.${index}.advantage`}
+                            name={`advantages[${index}]`}
                             placeholder="Введите навык"
                             type="text"
                           />
@@ -95,7 +89,7 @@ function Step2() {
                     <Button
                       type="button"
                       id="button-add"
-                      onClick={() => push({ advantage: "" })}
+                      onClick={() => push("")}
                     >
                       +
                     </Button>
