@@ -13,18 +13,8 @@ import { FieldArray, Form, Formik } from "formik";
 function Step2() {
   const advantagesRegExp = /^[A-zА-яЁё\s]+$/;
   const navigateNextPage = useNavigate();
-
-  const checkboxGroup = [
-    { key: "1", value: "1" },
-    { key: "2", value: "2" },
-    { key: "3", value: "3" },
-  ];
-
-  const radioGroup = [
-    { key: "1", value: "1" },
-    { key: "2", value: "2" },
-    { key: "3", value: "3" },
-  ];
+  let checkboxGroup: number[] = [1, 2, 3];
+  let radioGroup: number[] = [1, 2, 3];
 
   return (
     <div className="step2__container">
@@ -51,7 +41,14 @@ function Step2() {
         onSubmit={async (values, { setSubmitting }) => {
           await new Promise((r) => setTimeout(r, 500));
           setSubmitting(false);
-          console.log(values);
+          checkboxGroup = values.checkboxGroup.map((str) => {
+            return parseInt(str, 10);
+          });
+          const valuesStep2 = {
+            advantages: values.advantages,
+            checkboxGroup: checkboxGroup,
+            radioGroup: parseInt(values.radioGroup),
+          };
           navigateNextPage("/step3");
         }}
       >
@@ -106,7 +103,7 @@ function Step2() {
                     id={`field-checkbox-group-option-${index + 1}`}
                     name="checkboxGroup"
                     label={`${index + 1}`}
-                    value={`${index + 1}`}
+                    value={`${checkboxGroup[index]}`}
                     type="checkbox"
                   />
                 </div>
@@ -123,7 +120,7 @@ function Step2() {
                     id={`field-radio-group-option-${index + 1}`}
                     name="radioGroup"
                     label={`${index + 1}`}
-                    value={`${index + 1}`}
+                    value={`${radioGroup[index]}`}
                     type="radio"
                   />
                 </div>
